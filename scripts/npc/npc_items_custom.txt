@@ -8127,7 +8127,35 @@
 
     "item_faerie_fire"
     {
-        "AbilityCooldown"               "0.0"
+        "AbilityCooldown"               "0.01"
         "ItemCost"                      "25"
     }
+    
+    "item_basher"
+	{
+      "AbilityCooldown"				"0.01"
+
+      "AbilitySpecial"
+      {
+        "06"
+        {
+          "var_type"				"FIELD_FLOAT"
+          "bash_cooldown"			"0.01"
+        }
+      }
+	}
+   
+   "item_abyssal_blade"
+	{
+      "AbilityCooldown"				"11"
+      
+      "AbilitySpecial"
+      {
+        "11"
+        {
+          "var_type"				"FIELD_FLOAT"
+          "bash_cooldown"			"0.01"
+        }
+      }
+	}
 }

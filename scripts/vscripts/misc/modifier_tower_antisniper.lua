@@ -15,13 +15,21 @@ function antisniper_attacked( keys )
 	else
 		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
 	end
-  
-  if ( current_stack + current_range >= attack_range) then
+
+  if ( current_stack >= 2000) then
+  	-- If tower's bonus range is already at max - skip completely
+  	--print("Current stacks are maxed out: "..current_stack.." Skipping...")
+    return
+  elseif ( current_stack + current_range >= attack_range) then
   	-- If tower's bonus range is higher than attacker's attack range - skip
     return
   end
-  
-  local new_stacks = (attack_range - current_range) + 10
+
+  local new_stacks = (attack_range - current_range) + 40
+
+  if (new_stacks >= 2000) then
+  	new_stacks = 2000
+  end
 
   caster:SetModifierStackCount( modifier, ability, new_stacks )
 end
